@@ -106,6 +106,11 @@ test_requirements = [
     # Put package test requirements here.
 ]
 
+# KiCost Python packages requirements for GUI.
+gui_requirements = [
+    "wxPython >= 3.0.2"
+]
+
 # Extra files needed by KiCost.
 data_files = [
     # ('kicost', ['kicost/kicost.ico']), # Icon to the user guide. Added via `MANIFEST.in`.
@@ -167,5 +172,8 @@ setup(
     cmdclass={
         'develop': PostDevelopCommand,
         'install': PostInstallCommand,
+    },
+    extras_require = {
+        'gui': gui_requirements
     }
 )
